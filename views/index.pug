@@ -3,11 +3,14 @@ html
         title Index
         meta(name='viewport' content='width=device-width, initial-scale=1')
         link(type='text/css' href='/style.css' rel='stylesheet')
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
     body
         div.camContainer
             div.camera
-                video#video Stream is not available
-                button#startbutton Take a photo
-            canvas#canvas
+                video(id='video' height='280' width='320') Stream is not available
+                button#clickPhoto Take a photo
+                button#resetbutton Reset camera
+                button#flip-button Flip camera
+            canvas(id='canvas' height='280' width='320')
 
         script(src='video.js')
