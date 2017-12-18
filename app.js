@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 app.set('view engine', 'pug')
 
 app.use(express.static('public'))
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({limit: '20mb'}))
 
 app.get('/', (req, res) => {
     res.render('index')

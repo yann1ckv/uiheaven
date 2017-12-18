@@ -22,7 +22,7 @@ var video = document.getElementById('video')
 document.getElementById("clickPhoto").addEventListener("click", function() {
 	context.drawImage(video, 0, 0, 320, 240)
     savedData.src = canvas.toDataURL("image/png")
-    console.log(savedData.src)
+
     $.post('/postImage', {data: savedData.src}, function(result) {
         console.log(result)
     })
