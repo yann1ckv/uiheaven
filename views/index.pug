@@ -5,12 +5,69 @@ html
         link(type='text/css' href='/style.css' rel='stylesheet')
         script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
     body
-        div.camContainer
-            div.camera
-                video(id='video' height='280' width='320') Stream is not available
-                button#clickPhoto Take a photo
-                button#resetbutton Reset camera
-                button#flip-button Flip camera
-            canvas(id='canvas' height='280' width='320')
+        div.one
+            div.header
+                p Verkeerd Bezorgd
+            div.body
+                p Ook last van ongewenste reclame in je brievenbus? Maak er melding van! Samen met je stadsgenoten gaan we er iets aan doen!
+            div.footer
+                p Meld!
+        div.two
+            div.camContainer
+                div.camera
+                    video(id='video' height='280' width='320') Stream is not available
+                    button#clickPhoto Take a photo
+                    button#resetbutton Reset camera
+                    button#flip-button Flip camera
+                canvas(id='canvas' height='280' width='320')
 
         script(src='video.js')
+
+style.
+
+    body {
+    margin: 0;
+    padding: 0;
+    }
+
+    .one {
+    height: 100vh;
+    background-image: url('verkeerdbezorgd/assets/bg@1x.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    .header {
+    width: 100%;
+    height; 10vh;
+    color: #E93700;
+    text-align: center;
+    padding: 10;
+    font-weight: bold;
+    text-transform: lowercase;
+    font-family: Futura;
+    }
+
+    .body {
+    width: 80%;
+    font-family: Futura;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    }
+
+    .footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    }
+
+    .two {
+    height: 100vh;
+    background-image: url('verkeerdbezorgd/assets/bg@1x.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
