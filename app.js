@@ -19,8 +19,8 @@ app.post('/postImage', (req, res) => {
     var base64Data = req.body.data.replace(/^data:image\/png;base64,/, "");
 
     fs.writeFile(`images/${uuidv4()}.png`, base64Data, 'base64', function(err) {
-        if (err) console.log(err);
-    });
+        if (err) console.log(err)
+    })
 })
 
 app.listen(port, () => {
