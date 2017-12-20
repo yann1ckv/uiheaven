@@ -1,9 +1,6 @@
 var video = document.getElementById('video');
 
-var front = false;
-document.getElementById('flip-button').onclick = function() { front = !front; };
-
-var constraints = { video: { facingMode: (front? "user" : "environment") } };
+var constraints = { video: true } };
 
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia(constraints)
@@ -22,7 +19,7 @@ var video = document.getElementById('video')
 document.getElementById("clickPhoto").addEventListener("click", function() {
 	context.drawImage(video, 0, 0, 320, 240)
     savedData.src = canvas.toDataURL("image/png")
-    
+
     $.post('/postImage', {data: savedData.src}, function(result) {
         console.log(result)
     })
