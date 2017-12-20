@@ -1,5 +1,6 @@
-var video = document.getElementById('video');
+'use strict';
 
+var video = document.getElementById('video');
 var constraints = { video: true };
 
 function handleSuccess(stream) {
