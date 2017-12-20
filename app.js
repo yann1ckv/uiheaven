@@ -4,15 +4,6 @@ const port = 80
 const bodyParser = require('body-parser')
 const fs = require('fs')
 const uuidv4 = require('uuid/v4')
-var key = fs.readFileSync('encryption/private.key');
-var cert = fs.readFileSync( 'encryption/primary.crt' );
-var ca = fs.readFileSync( 'encryption/intermediate.crt' );
-
-var options = {
-  key: key,
-  cert: cert,
-  ca: ca
-};
 
 app.set('view engine', 'pug')
 
