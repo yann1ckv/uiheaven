@@ -1,6 +1,6 @@
 var video = document.getElementById('video');
 
-var constraints = { video: true } };
+var constraints = { video: true };
 
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia(constraints)
