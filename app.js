@@ -2,7 +2,7 @@
 
 const express = require('express')
 const app = express()
-const port = 80
+const port = 3001
 const bodyParser = require('body-parser')
 const fs = require('fs')
 const uuidv4 = require('uuid/v4')
