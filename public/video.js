@@ -1,7 +1,7 @@
 'use strict';
 
 var video = document.getElementById('video');
-var constraints = { video: true };
+var constraints = { audio: false, video:  { facingMode: { exact: "environment" } } };
 
 function handleSuccess(stream) {
   window.stream = stream; // make stream available to browser console
