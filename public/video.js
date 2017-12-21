@@ -22,9 +22,12 @@ var context = canvas.getContext('2d')
 
 document.getElementById("clickPhoto").addEventListener("click", function() {
 	context.drawImage(video, 0, 0, 320, 240)
+});
+
+document.getElementById("mylife").addEventListener("click", function() {
     savedData.src = canvas.toDataURL("image/png")
 
-    $.post('/postImage', {data: savedData.src}, function(result) {
+    $.post('/mylife', {data: savedData.src}, function(result) {
         console.log(result)
     })
 });
