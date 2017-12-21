@@ -8,12 +8,17 @@ const fs = require('fs')
 const uuidv4 = require('uuid/v4')
 
 app.set('view engine', 'pug')
+app.set('views', './views')
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({limit: '5mb'}))
 
 app.get('/', (req, res) => {
     res.render('index')
+})
+
+app.get('/mylife', (req, res) => {
+    res.render('snitch')
 })
 
 app.post('/postImage', (req, res) => {
