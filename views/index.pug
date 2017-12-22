@@ -17,16 +17,23 @@ html
                 p Meld!
                 img(src='VerkeerdBezorgd/Assets/Arrow_Icon.svg')
         div.two
-            div.camContainer
-                div.camera
+            div.camera
                     video(id='video' height='280' width='320' autoplay playsinline) Stream is not available
-                    button#clickPhoto Take a photo
-                div.camContainer
+                    button#clickPhoto Snap
+                
+        div.three
+            div.displayOutput
                 canvas(id='canvas' height='280' width='320')
                 button#takeAgain Neem foto opnieuw
-        div.three
-            div.wtf
-                p Vul hier de naam van de adverteerder in.
+            div.okay
+                    form(method='POST' action='/addmessage')
+                        p Vul hier de naam van de adverteerder in.
+                        input#uplo(name='title' type='text' placeholder='Naam adverteerder')
+                        p Vul hier je postcode in.*
+                        input#postco(name='postcode' type='text' placeholder='Postcode')
+                        p Laat hier je e-mail adres achter als je op de hoogte gehouden wil worden van je melding.
+                        input#email(name='email' type='text' placeholder='E-mail adres')
+                        button#meld Meld!
         div.four
             div.upper
                 h3 Wat is Verkeerdbezorgd.nl?
@@ -48,7 +55,7 @@ html
         script.
             $(document).ready(function() {
                 $("#info").click(function(){
-                    $('html,body').animate({scrollTop: $('#header').offset().top},'slow')
+                    $('html,body').animate({scrollTop: $('#text').offset().top},'slow')
                 })
                 
                 $("#clickPhoto").click(function(){
@@ -133,26 +140,113 @@ style.
     }
 
     .two {
+    position: relative;
     height: 100vh;
-    background-color: white;
-    border: 1px solid yellow;
+    background-image: url('VerkeerdBezorgd/Assets/uxlife.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    .camera {
+    box-shadow: 2px 10px 40px black inset;
+    position: absolute;
+    top: 12%;
+    left: 7%;
+    }
+
+    .camera video {
+    margin: 30 auto;
+    }
+
+    .camera button {
+    display: block;
+    margin: 20 auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial;
+    padding: 15px 5px;
+    border: 2px solid black;
+    border-radius: 50px 20px;
+    background-color: rgba(128,128,128,0.4);
+    background: -o-linear-gradient(top, rgba(148,172,181,1) 0%,rgba(23,86,127,1) 100%);
+    -moz-box-shadow:
+    0px -1px 3px rgba(190,255,255,0.5), 
+    2px 3px 3px rgba(0,0,0,0.2), 
+    inset 0 -1px 1px rgba(0,0,0,0.5), 
+    inset 0 1px 1px rgba(255,255,255,1); 
+    -webkit-box-shadow:
+    0px -1px 3px rgba(190,255,255,0.5), 
+    2px 3px 3px rgba(0,0,0,0.2), 
+    inset 0 -1px 1px rgba(0,0,0,0.5), 
+    inset 0 1px 1px rgba(255,255,255,1); 
+    box-shadow: 0px -1px 3px rgba(190,255,255,0.5), 
+    2px 3px 3px rgba(0,0,0,0.2), 
+    inset 0 -1px 1px rgba(0,0,0,0.5), 
+    inset 0 1px 1px rgba(255,255,255,1);
     }
     
     .three {
     height: 100vh;
+    position: relative;
     background-color: white;
     border: 1px solid magenta;
     font-family: Futura;
     }
 
-    .video, .canvas {
-    background: #FFF;
+    .displayOutput {
+    position: absolute;
     }
     
-    .Info_Icon {
+    .okay {
+    display: inline-block;
     position: absolute;
-    right: 5px;
-    top: 0px;
+    top: 50%;
+    left: 7%;
+    width: 80%;
+    }
+
+    .okay p {
+    font-size: 12px;
+    }
+
+    .okay input {
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 10 auto;
+    padding: 5px 5px 5px 40px;
+    position: relative;
+    margin: auto;
+    }
+
+    #uplo {
+    background-image: url('VerkeerdBezorgd/Assets/Company_Icon.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    }
+
+    #postco {
+    background-image: url('VerkeerdBezorgd/Assets/Place_Icon.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    }
+
+    #email {
+    background-image: url('VerkeerdBezorgd/Assets/at-sign-icon-17.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    }
+
+    .okay #meld {
+    width: 30vw;
+    color: white;
+    padding: 15px 45px 15px 45px;
+    text-align: center;
+    background-color: #EA0000;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Futura;
+    margin: 40 auto;
     }
     
     .four {
