@@ -31,7 +31,7 @@ app.get('/images', (req, res) => {
 
     client.connect()
 
-    client.query('SELECT image FROM complaints')
+    client.query('SELECT image FROM tyrone999')
     .then(result => {
         res.render('images', {images: result.rows})
     })
@@ -62,7 +62,7 @@ app.post('/mylife', (req, res) => {
         if (err) console.log('Error:', err)
     })
 
-    client.query(`INSERT INTO complaints (name, postcode, image, email) VALUES ('${req.body.name}', '${req.body.postcode}', '${name}', '${req.body.email}')`)
+    client.query(`INSERT INTO tyrone999 (name, postcode, image, email) VALUES ('${req.body.name}', '${req.body.postcode}', '${name}', '${req.body.email}')`)
     .catch(err => console.log('Error:', err))
 
     res.status(200).send({message: 'Posted!'})

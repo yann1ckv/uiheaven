@@ -23,7 +23,7 @@ html
         div.three
             div.displayOutput
                 canvas(id='canvas' height='240' width='320')
-                button#takeAgain Neem foto opnieuw
+                button#takeAgain Redo
             div.okay
                     form(id='form')
                         p Vul hier de naam van de adverteerder in.
@@ -82,9 +82,11 @@ style.
     .one {
     height: 100vh;
     width: 100%;
-    background-image: url('VerkeerdBezorgd/Assets/BG@1x.jpg');
+    background-image: url('VerkeerdBezorgd/Assets/uxlife.png');
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    top: 0;
     }
 
     .header {
@@ -145,7 +147,7 @@ style.
     .two {
     position: relative;
     height: 100vh;
-    background-image: url('VerkeerdBezorgd/Assets/BG@1x.jpg');
+    background-image: url('VerkeerdBezorgd/Assets/uxlife.png');
     background-repeat: no-repeat;
     background-size: cover;
     }
@@ -192,19 +194,47 @@ style.
     height: 100vh;
     position: relative;
     background-color: white;
-    border: 1px solid magenta;
     font-family: Futura;
     }
 
     .displayOutput {
     position: absolute;
+    top: 2%;
+    left: 7%;
+    }
+
+    .displayOutput button {
+    display: block;
+    margin: 20 auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial;
+    padding: 15px 5px;
+    border: 2px solid black;
+    border-radius: 50px 20px;
+    background-color: rgba(128,128,128,0.4);
+    background: -o-linear-gradient(top, rgba(148,172,181,1) 0%,rgba(23,86,127,1) 100%);
+    -moz-box-shadow:
+    0px -1px 3px rgba(190,255,255,0.5), 
+    2px 3px 3px rgba(0,0,0,0.2), 
+    inset 0 -1px 1px rgba(0,0,0,0.5), 
+    inset 0 1px 1px rgba(255,255,255,1); 
+    -webkit-box-shadow:
+    0px -1px 3px rgba(190,255,255,0.5), 
+    2px 3px 3px rgba(0,0,0,0.2), 
+    inset 0 -1px 1px rgba(0,0,0,0.5), 
+    inset 0 1px 1px rgba(255,255,255,1); 
+    box-shadow: 0px -1px 3px rgba(190,255,255,0.5), 
+    2px 3px 3px rgba(0,0,0,0.2), 
+    inset 0 -1px 1px rgba(0,0,0,0.5), 
+    inset 0 1px 1px rgba(255,255,255,1);
     }
     
     .okay {
     display: inline-block;
     position: absolute;
     top: 50%;
-    left: 7%;
+    left: 10%;
     width: 80%;
     }
 
@@ -214,7 +244,7 @@ style.
 
     .okay input {
     width: 100%;
-    border: 1px solid grey;
+    border: 2px solid #e6e6e6;
     border-radius: 5px;
     margin: 10 auto;
     padding: 5px 5px 5px 40px;
@@ -241,22 +271,23 @@ style.
     }
 
     .okay #meld {
-    width: 30vw;
+    display: block;
+    margin: 40 auto;
+    width: 35vw;
     color: white;
-    padding: 15px 45px 15px 45px;
+    padding: 10px 30px;
     text-align: center;
     background-color: #EA0000;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: Futura;
-    margin: 40 auto;
     }
     
     .four {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url('VerkeerdBezorgd/Assets/BG@1x.jpg');
+    background-image: url('VerkeerdBezorgd/Assets/uxlife.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: inline-block;
@@ -272,6 +303,7 @@ style.
 
     .upper h3 {
     text-align: center;
+    text-shadow: #FFFFFF 1px 0 10px;
     }
 
     .upper p {
