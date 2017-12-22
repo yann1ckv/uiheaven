@@ -25,14 +25,14 @@ html
                 canvas(id='canvas' height='280' width='320')
                 button#takeAgain Neem foto opnieuw
             div.okay
-                    form(method='POST' action='/addmessage')
+                    form(id='form')
                         p Vul hier de naam van de adverteerder in.
                         input#uplo(name='title' type='text' placeholder='Naam adverteerder')
                         p Vul hier je postcode in.*
-                        input#postco(name='postcode' type='text' placeholder='Postcode')
+                        input#postco(name='postcode' type='text' placeholder='Postcode' required)
                         p Laat hier je e-mail adres achter als je op de hoogte gehouden wil worden van je melding.
                         input#email(name='email' type='text' placeholder='E-mail adres')
-                        button#meld Meld!
+                        input#meld(type='button' value='Meld!')
         div.four
             div.upper
                 h3 Wat is Verkeerdbezorgd.nl?

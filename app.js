@@ -38,6 +38,10 @@ app.get('/images', (req, res) => {
     .catch(err => console.log(err))
 })
 
+app.get('/snitch', (req, res) => {
+    res.render('snitch')
+})
+
 app.post('/mylife', (req, res) => {
 
     const client = new Client({
@@ -50,19 +54,18 @@ app.post('/mylife', (req, res) => {
 
     client.connect()
 
-    var base64Data = req.body.data.replace(/^data:image\/png;base64,/, "");
+    var base64Data = req.body.image.replace(/^data:image\/png;base64,/, "");
 
     var name = uuidv4()
 
     fs.writeFile(`public/images/${name}.png`, base64Data, 'base64', function(err) {
-        if (err) console.log(err)
+        if (err) console.log('Error:', err)
     })
 
-    client.query(`INSERT INTO complaints (name, postcode, image, email) VALUES ('Döner masters', '1077 VS', '${name}', 'lookatmesnitching@gmail.com')`)
-    .catch(err => console.log(err))
+    client.query(`INSERT INTO complaints (name, postcode, image, email) VALUES ('${req.body.name}', '${req.body.postcode}', '${name}', '${req.body.email}')`)
+    .catch(err => console.log('Error:', err))
 
-
-    res.render('snitch')
+    res.status(200).send({message: 'Posted!'})
 })
 
 app.listen(port, () => {

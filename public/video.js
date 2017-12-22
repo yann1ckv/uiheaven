@@ -25,9 +25,22 @@ document.getElementById("clickPhoto").addEventListener("click", function() {
 });
 
 document.getElementById("meld").addEventListener("click", function() {
-    savedData.src = canvas.toDataURL("image/png")
 
-    $.post('/mylife', {data: savedData.src}, function(result) {
-        console.log(result)
+    savedData.src = canvas.toDataURL("image/png")
+    let name = $('#uplo').val()
+    let postcode = $('#postco').val()
+    let email = $('#email').val()
+
+    $.ajax({
+        url:'/mylife',
+        type: 'POST',
+        data: {image: savedData.src, name: name, postcode: postcode, email: email},
+        dataType: 'JSON',
+        success(data, textStatus, jQxhr) {
+            window.location.href = 'snitch';
+        },
+        error: function(result) {
+            console.log('Error: ' + result)
+        }
     })
 });
