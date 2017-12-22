@@ -42,6 +42,10 @@ app.get('/snitch', (req, res) => {
     res.render('snitch')
 })
 
+app.get('/mylife', (req, res) => {
+    res.send('hi')
+})
+
 app.post('/mylife', (req, res) => {
 
     const client = new Client({
