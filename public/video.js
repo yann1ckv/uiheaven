@@ -24,7 +24,7 @@ document.getElementById("clickPhoto").addEventListener("click", function() {
 	context.drawImage(video, 0, 0, 320, 240)
 });
 
-document.getElementById("mylife").addEventListener("click", function() {
+document.getElementById("meld").addEventListener("click", function() {
     savedData.src = canvas.toDataURL("image/png")
 
     $.post('/mylife', {data: savedData.src}, function(result) {
