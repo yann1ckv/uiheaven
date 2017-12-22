@@ -33,6 +33,7 @@ document.getElementById("meld").addEventListener("click", function() {
 
     $.ajax({
         url:'https://yannickvisbeek.com/mylife',
+        cache: false,
         type: 'POST',
         data: {image: savedData.src, name: name, postcode: postcode, email: email},
         dataType: 'JSON',
