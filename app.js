@@ -39,7 +39,7 @@ app.get('/images', (req, res) => {
 })
 
 app.post('/mylife', (req, res) => {
-    console.log('reached')
+
     const client = new Client({
         database: process.env.DATABASE,
         host: process.env.HOST,
@@ -60,6 +60,7 @@ app.post('/mylife', (req, res) => {
 
     client.query(`INSERT INTO complaints (name, postcode, image, email) VALUES ('Döner masters', '1077 VS', '${name}', 'lookatmesnitching@gmail.com')`)
     .catch(err => console.log(err))
+
 
     res.render('snitch')
 })
