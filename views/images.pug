@@ -4,6 +4,23 @@ html
         link(type='text/css' href='/style.css' rel='stylesheet')
         script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
     body
-        each image in images
-            div.images
-                img(src=image.image+'.png')
+        div.grid
+            each image in images
+                div.grid-item
+                    img(src=image.image+'.png')
+                        
+                        
+            style.
+                html, body {
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                .grid {
+                    margin: 0;
+                }
+                
+                .grid-item {
+                    float: left;
+                    margin: 0;
+                }
