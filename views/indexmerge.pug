@@ -15,11 +15,10 @@ html
                 p Ook last van ongewenste reclame in je brievenbus? Maak er melding van! Samen met je stadsgenoten gaan we er iets aan doen!
             div.footer
                 p Meld!
-                img(src='VerkeerdBezorgd/Assets/Arrow_Icon.svg' id='snitch')
+                img(src='VerkeerdBezorgd/Assets/Arrow_Icon.svg')
         div.two
             div.camera
                     video(id='video' height='280' width='320' autoplay playsinline) Stream is not available
-<<<<<<< HEAD
                     button#clickPhoto Snap
                 
         div.three
@@ -35,17 +34,6 @@ html
                         p Laat hier je e-mail adres achter als je op de hoogte gehouden wil worden van je melding.
                         input#email(name='email' type='text' placeholder='E-mail adres')
                         button#meld Meld!
-=======
-                    button#clickPhoto Take a photo
-        div.three
-            div.wtf
-                p Vul hier de naam van de adverteerder in.
-                div.camContainer
-                    canvas(id='canvas' height='280' width='320')
-                    button#takeAgain Neem foto opnieuw
-                div
-                    button#mylife Snitch!
->>>>>>> dfce1199f4d9867a4001638f8ee86e802a174b0f
         div.four
             div.upper
                 h3 Wat is Verkeerdbezorgd.nl?
@@ -67,23 +55,15 @@ html
         script.
             $(document).ready(function() {
                 $("#info").click(function(){
-<<<<<<< HEAD
                     $('html,body').animate({scrollTop: $('#text').offset().top},'slow')
-=======
-                    $('html,body').animate({scrollTop: $('.four').offset().top},'slow')
-                })
-                
-                $("#snitch").click(function(){
-                    $('html,body').animate({scrollTop: $('.two').offset().top},'slow')
->>>>>>> dfce1199f4d9867a4001638f8ee86e802a174b0f
                 })
                 
                 $("#clickPhoto").click(function(){
-                    $('html,body').animate({scrollTop: $('.three').offset().top},'slow')
+                    $('html,body').animate({scrollTop: $('#canvas').offset().top},'slow')
                 })
                 
                 $("#takeAgain").click(function(){
-                    $('html,body').animate({scrollTop: $('.two').offset().top},'slow')
+                    $('html,body').animate({scrollTop: $('#video').offset().top},'slow')
                 })
             })
 
