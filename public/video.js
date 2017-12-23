@@ -32,7 +32,7 @@ document.getElementById("meld").addEventListener("click", function() {
     let email = $('#email').val()
 
     $.ajax({
-        url:'post',
+        url:'https://yannickvisbeek.com/post/',
         cache: false,
         type: 'POST',
         data: {image: savedData.src, name: name, postcode: postcode, email: email},
