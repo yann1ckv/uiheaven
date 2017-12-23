@@ -43,7 +43,7 @@ app.get('/posted', (req, res) => {
 })
 
 app.post('/post', (req, res) => {
-
+    console.log('reached')
     const client = new Client({
         database: process.env.DATABASE,
         host: process.env.HOST,
