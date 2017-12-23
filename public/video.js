@@ -32,13 +32,13 @@ document.getElementById("meld").addEventListener("click", function() {
     let email = $('#email').val()
 
     $.ajax({
-        url:'https://yannickvisbeek.com/mylife/',
+        url:'https://yannickvisbeek.com/post/',
         cache: false,
         type: 'POST',
         data: {image: savedData.src, name: name, postcode: postcode, email: email},
         dataType: 'JSON',
         success(data, textStatus, jQxhr) {
-            window.location.href = 'snitch';
+            window.location.href = 'posted';
         },
         error: function(result) {
             console.log('Error: ' + result)

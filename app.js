@@ -38,11 +38,11 @@ app.get('/images', (req, res) => {
     .catch(err => console.log(err))
 })
 
-app.get('/snitch', (req, res) => {
-    res.render('snitch')
+app.get('/posted', (req, res) => {
+    res.render('posted')
 })
 
-app.post('/mylife', (req, res) => {
+app.post('/post', (req, res) => {
 
     const client = new Client({
         database: process.env.DATABASE,
