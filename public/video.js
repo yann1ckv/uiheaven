@@ -2,7 +2,7 @@
 
 var front=false;
 var video = document.getElementById('video');
-var constraints = { video:  { facingMode: (front? "user" : "environment") } };
+var constraints = { video:  { facingMode: (front? "user" : "environment"), width: "320px" } };
 
 function handleSuccess(stream) {
   window.stream = stream; // make stream available to browser console
@@ -21,7 +21,7 @@ var canvas = document.getElementById('canvas'),
 var context = canvas.getContext('2d')
 
 document.getElementById("clickPhoto").addEventListener("click", function() {
-	context.drawImage(video, 0, 0)
+	context.drawImage(video, 0, 0, 320, 480)
 });
 
 document.getElementById("meld").addEventListener("click", function() {
