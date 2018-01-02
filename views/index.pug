@@ -29,7 +29,7 @@ html
                     button#clickPhoto Neem foto 
         div.three
             div.displayOutput
-                canvas(id='canvas' height='240' width='320')
+                canvas(id='canvas')
                 button#takeAgain Opnieuw
             div.okay
                     form(id='form')
@@ -325,9 +325,13 @@ style.
     }
 
     .displayOutput {
+    width: 100%;
     position: absolute;
+    display: block;
+    margin: 0 auto;
     top: 2%;
-    left: 7%;
+    left: 0;
+    right: 0;
     }
 
     /* .displayOutput button {
@@ -442,7 +446,12 @@ style.
     }
     
     #canvas {
-    border-radius: 20px;
+        display: block;
+        text-align: center;
+        margin: 30 auto;
+        width: 80%;
+        height: 30%;
+        border-radius: 20px;
     }
     
     .four {
