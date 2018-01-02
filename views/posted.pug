@@ -8,8 +8,7 @@ html
 	body
 		div.one
 			div.header
-				p
-					a(href='/') verkeerdbezorgd.nl
+				p melding<span style="color: #E93700">.</span>amsterdam
 			div.body
 				h3 Melding geslaagd.
 
@@ -27,12 +26,26 @@ style.
 	height: 100%;
 	}
 	
+	@font-face {
+	font-family: cocogoose;
+	src: url('VerkeerdBezorgd/Assets/Cocogoose Pro-trial.ttf');
+	}
+	
 	.one {
 	height: 100vh;
 	width: 100%;
-	background-image: url('VerkeerdBezorgd/Assets/BG@1x.jpg');
+	background-image: url('VerkeerdBezorgd/Assets/BG2@3x.png');
 	background-repeat: no-repeat;
 	background-size: cover;
+	}
+	
+	h3 {
+	color: #E93700;
+	text-align: center;
+	padding: 10 0;
+	font-weight: bold;
+	margin: 0 auto;
+	font-family: cocogoose;
 	}
 	
 	.header {
@@ -41,13 +54,13 @@ style.
 	display: block;
 	}
 
-	.header p {
-	color: #E93700;
-	text-align: center;
-	padding: 10 0;
-	font-weight: bold;
-	font-size: 12px;
-	font-family: Futura;
+	.header p {	
+	color: #FFFFFF;
+	padding: 25 30;
+	font-size: 20px;
+	line-height: 29px;
+	font-family: cocogoose;
+	text-shadow: 2px 2px #000000;
 	}
 	
 	.header img {
@@ -57,6 +70,7 @@ style.
 	}
 	
 	.body {
+	color: #FFFFFF;
 	width: 80%;
 	font-family: Futura;
 	text-align: center;
@@ -67,8 +81,12 @@ style.
 	}
 
 	.body p {
-	text-align: left;
-	font-size: 12px;
+	margin: 10 auto;
+	color: #FFFFFF;
+	font-size: 10px;
+	line-height: 15px;
+	font-family: cocogoose;
+	text-shadow: 2px 2px #000000;
 	}
 	
 	a {
