@@ -8,44 +8,51 @@ html
     body
         div.one
             div.header
-                p verkeerdbezorgd.nl
-                p.Info_Icon
-                img(src='VerkeerdBezorgd/Assets/Info_Icon.svg' id='info')
+                p melding<span style="color: #E93700">.</span>amsterdam
             div.body
-                p Ook last van ongewenste reclame in je brievenbus? Maak er melding van! Samen met je stadsgenoten gaan we er iets aan doen!
+                p#head Meld fout bezorgd reclamedrukwerk.
+                p#together Samen met je stadsgenoten gaan we er iets aan doen!
+                button#info Meer informatie
             div.footer
-                p Meld!
+                button#meldb Meld!
                 img(src='VerkeerdBezorgd/Assets/Arrow_Icon.svg' id='snitch')
         div.two
             div.camera
+                    p#takeHeader Maak een foto van de folder<span style="color: #E93700">:</span>
+                    div#photoList
+                        <ul id="list">
+                            <li>recht van boven</li>
+                            <li>met veel licht</li>
+                            <li>van de hele folder</li>
+                        </ul>
                     video(id='video' height='240' width='320' autoplay playsinline) Stream is not available
-                    button#clickPhoto      
+                    button#clickPhoto Neem foto 
         div.three
             div.displayOutput
                 canvas(id='canvas' height='240' width='320')
-                button#takeAgain Re-take photo
+                button#takeAgain Opnieuw
             div.okay
                     form(id='form')
-                        p Vul hier de naam van de adverteerder in.*
+                        p Wat is de naam van de adverteerder?
                         input#uplo(name='title' type='text' placeholder='Naam adverteerder')
-                        p Vul hier je postcode in.*
+                        p Wat is je postcode?
                         input#postco(name='postcode' type='text' placeholder='Postcode' required)
-                        p Laat hier je e-mail adres achter als je op de hoogte gehouden wil worden van je melding.
+                        p -optioneel- Wat is je emailadres?
                         input#email(name='email' type='text' placeholder='E-mail adres')
                         input#meld(type='button' value='Meld!')
-        div.four
-            div.upper
-                h3 Wat is Verkeerdbezorgd.nl?
-
-                p Verkeerdbezorgd.nl is een initiatief van de gemeente Amsterdam en de Reclame Code Commissie. Samen met Amsterdammers gaan we ongewenste reclame te lijf. Heb jij ook zo vaak last van ongewenste reclame? Maak er hier melding van!
-                
-                p Zijn je buren ook slachtoffer geworden? Als we genoeg meldingen krijgen kan de gemeente Amsterdam een vuist maken tegen de distributeurs van reclamefolders
-            div.footnote
-                div#text
-                    h3 In samenwerking met:
-                div.logos
-                    img(src='VerkeerdBezorgd/Assets/Gemeente_Logo.png')
-                    img(src='VerkeerdBezorgd/Assets/RCC_Logo.jpg')
+        //- div.four
+        //-     div.upper
+        //-         h3 Wat is Verkeerdbezorgd.nl?
+        //- 
+        //-         p Verkeerdbezorgd.nl is een initiatief van de gemeente Amsterdam en de Reclame Code Commissie. Samen met Amsterdammers gaan we ongewenste reclame te lijf. Heb jij ook zo vaak last van ongewenste reclame? Maak er hier melding van!
+        //- 
+        //-         p Zijn je buren ook slachtoffer geworden? Als we genoeg meldingen krijgen kan de gemeente Amsterdam een vuist maken tegen de distributeurs van reclamefolders
+        //-     div.footnote
+        //-         div#text
+        //-             h3 In samenwerking met:
+        //-         div.logos
+        //-             img(src='VerkeerdBezorgd/Assets/Gemeente_Logo.png')
+        //-             img(src='VerkeerdBezorgd/Assets/RCC_Logo.jpg')
             
         script(src='video.js')
         script(src='/js/adapter-latest.js')
@@ -58,6 +65,10 @@ html
                 })
                 
                 $("#snitch").click(function(){
+                    $('html,body').animate({scrollTop: $('.two').offset().top},'slow')
+                })
+                
+                $("#meldb").click(function(){
                     $('html,body').animate({scrollTop: $('.two').offset().top},'slow')
                 })
                 
@@ -78,11 +89,16 @@ style.
     width: 100%;
     height: 100%;
     }
+    
+    @font-face {
+    font-family: cocogoose;
+    src: url('VerkeerdBezorgd/Assets/Cocogoose Pro-trial.ttf');
+    }
 
     .one {
     height: 100vh;
     width: 100%;
-    background-image: url('VerkeerdBezorgd/Assets/BG@1x.jpg');
+    background-image: url('VerkeerdBezorgd/Assets/BG1@3x.png');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -96,12 +112,12 @@ style.
     }
 
     .header p {
-    color: #E93700;
-    text-align: center;
-    padding: 10 0;
-    font-weight: bold;
-    font-size: 12px;
-    font-family: Futura;
+    color: #FFFFFF;
+    padding: 25 30;
+    font-size: 20px;
+    line-height: 29px;
+    font-family: cocogoose;
+    text-shadow: 2px 2px #000000;
     }
 
     .header img {
@@ -117,14 +133,14 @@ style.
     text-align: center;
     margin: auto;
     position: absolute;
-    top: 30%;
+    top: 55%;
     left: 10%;
     }
 
     .footer {
     width: 100%;
-    height: 10vh;
-    background-color: white;
+    height: 15vh;
+    background-color: #303035;
     position: absolute;
     bottom: 0;
     }
@@ -147,11 +163,98 @@ style.
     .two {
     position: relative;
     height: 100vh;
-    background-image: url('VerkeerdBezorgd/Assets/BG@1x.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     }
+    
+    #head {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: cocogoose;
+    text-shadow: 2px 2px #000000;
+    }
+    
+    #together {
+    margin: 0 auto;
+    color: #8c8c8c;
+    font-size: 10px;
+    line-height: 15px;
+    font-family: cocogoose;
+    text-shadow: 2px 2px #000000;
+    width: 60%;
+    }
+    
+    #info {
+        display: block;
+        margin: 20 auto;
+        width: 35vw;
+        font-size: 10px;
+        line-height: 15px;
+        font-family: cocogoose;
+        text-shadow: 2px 2px #000000;
+        color: white;
+        padding: 3px 10px;
+        text-align: center;
+        background: none;
+        border-radius: 50px;
+        border-color: #C72F00;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        box-shadow: 1px 1px 1px 1px #000000;
+    }
+    
+    #meldb {
+        display: block;
+        margin: 20 auto;
+        width: 20vw;
+        font-size: 10px;
+        line-height: 15px;
+        font-family: cocogoose;
+        color: white;
+        padding: 3px 10px;
+        text-align: center;
+        background-color: #C72F00;
+        border-radius: 50px;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        box-shadow: 1px 1px 1px 1px #000000;
+    }
 
+    #takeHeader {
+        margin: 0 auto;
+        color: #000000;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: cocogoose;
+        width: 90%;
+    }
+    
+    #list {
+        margin: 20 auto;
+        color: #8c8c8c;
+        font-size: 10px;
+        line-height: 15px;
+        font-family: cocogoose;
+    }
+    
+    #list li {
+        list-style: none; 
+    }
+
+    #list li::before {
+        content: "• ";
+        color: #C72F00;
+        content: "\2022"; 
+        font-size: 2em; 
+        position: relative;
+        top: 0.15em;
+        padding-right: 0.5em; 
+    }
+    
     .camera {
     /* box-shadow: 2px 10px 40px black inset; */
     position: absolute;
@@ -161,6 +264,7 @@ style.
 
     .camera video {
     margin: 30 auto;
+    border-radius: 20px;
     }
 
     /* .camera button {
@@ -191,20 +295,32 @@ style.
     } */
     
     .camera button {
-        background-image: url('VerkeerdBezorgd/Assets/Camera capture button.png');
         display: block;
         margin: 20 auto;
+        width: 30vw;
+        font-size: 10px;
+        line-height: 15px;
+        font-family: cocogoose;
+        color: white;
+        padding: 3px 10px;
         text-align: center;
+        background-color: #C72F00;
+        border-radius: 50px;
         border: none;
-        width: 62px;
-        height: 48px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        box-shadow: 1px 1px 1px 1px #000000;
     }
     
     .three {
     height: 100vh;
+    width: 100%;
+    background-image: url('VerkeerdBezorgd/Assets/BG2@3x.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
-    background-color: white;
-    font-family: Futura;
+    top: 0;
     }
 
     .displayOutput {
@@ -249,13 +365,19 @@ style.
     }
 
     .okay p {
-    font-size: 12px;
+        font-family: cocogoose;
+        font-size: 10px;
+        line-height: 12px;
+        color: #FFFFFF;
+        text-shadow: 2px 2px #000000;
+        margin: 25 0 7 0;
     }
 
     .okay input {
     width: 100%;
     border: 2px solid #e6e6e6;
     border-radius: 5px;
+    font-style: italic;
     margin: 10 auto;
     padding: 5px 5px 5px 40px;
     position: relative;
@@ -281,35 +403,45 @@ style.
     }
 
     .okay #meld {
-    display: block;
-    margin: 40 auto;
-    width: 35vw;
-    color: white;
-    padding: 10px 30px;
-    text-align: center;
-    background-color: #EA0000;
-    border-radius: 10px;
-    font-size: 16px;
-    font-family: Futura;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+        display: block;
+        margin: 35 auto;
+        width: 20vw;
+        font-size: 10px;
+        line-height: 15px;
+        font-family: cocogoose;
+        color: white;
+        padding: 3px 10px;
+        text-align: center;
+        background-color: #C72F00;
+        border-radius: 50px;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        box-shadow: 1px 1px 1px 1px #000000;
     }
     
     #takeAgain {
         display: block;
-        margin: 40 auto;
-        width: 45vw;
+        margin: 20 auto;
+        width: 30vw;
+        font-size: 10px;
+        line-height: 15px;
+        font-family: cocogoose;
         color: white;
-        padding: 10px 30px;
+        padding: 3px 10px;
         text-align: center;
-        background-color: #EA0000;
-        border-radius: 10px;
-        font-size: 16px;
-        font-family: Futura;
+        background-color: #C72F00;
+        border-radius: 50px;
+        border: none;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        box-shadow: 1px 1px 1px 1px #000000;
+    }
+    
+    #canvas {
+    border-radius: 20px;
     }
     
     .four {
