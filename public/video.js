@@ -21,7 +21,7 @@ var canvas = document.getElementById('canvas'),
 var context = canvas.getContext('2d')
 
 document.getElementById("clickPhoto").addEventListener("click", function() {
-	context.drawImage(video, 0, 0, 600, 600)
+	context.drawImage(video, 0, 0)
 });
 
 document.getElementById("meld").addEventListener("click", function() {
