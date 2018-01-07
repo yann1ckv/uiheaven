@@ -2,7 +2,7 @@
 
 One-page mobile website project using Node.js, Postgresql and Pug/Jade. The website is meant for people who receive unwanted advertisement leaflets in their mailbox.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/Yann1ck/uiheaven/blob/master/public/images/LandingPage_OVERVIEW_02012018.png "Melding.Amsterdam Website")
 
 
 
