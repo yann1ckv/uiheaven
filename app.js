@@ -1,4 +1,4 @@
-    #!/usr/bin/env nodejs
+#!/usr/bin/env nodejs
 
 require('dotenv').config()
 
@@ -29,7 +29,8 @@ app.get('/images', (req, res) => {
         port: process.env.DBPORT
     })
 
-    client.connect().catch(err => console.log(err))
+
+    client.connect().catch(err => console.log('Error:', err))
 
     client.query('SELECT image FROM complaints')
     .then(result => {
@@ -52,7 +53,7 @@ app.post('/post', (req, res) => {
         port: process.env.DBPORT
     })
 
-    client.connect().catch(err => console.log(err))
+    client.connect().catch(err => console.log('Error:', err))
 
     var base64Data = req.body.image.replace(/^data:image\/png;base64,/, "");
 
