@@ -31,3 +31,9 @@ Once a user filled out the form, the data gets stored in a PostgreSQL database s
 ## To-do
 
 - Create an easy-to-use dashboard in which the data is organised so that the Gemeente can get some good insights into in which areas they might need to take action
+
+
+## License
+>You can check out the full license [here](https://github.com/Yann1ck/uiheaven/blob/master/LICENSE)
+
+This project is licensed under the terms of the **MIT** license.
