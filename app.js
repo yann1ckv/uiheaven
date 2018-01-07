@@ -1,4 +1,4 @@
-#!/usr/bin/env nodejs
+    #!/usr/bin/env nodejs
 
 require('dotenv').config()
 
@@ -23,13 +23,13 @@ app.get('/', (req, res) => {
 app.get('/images', (req, res) => {
     const client = new Client({
         database: process.env.DATABASE,
-        host: process.env.HOST,
+        host: 'localhost',
         user: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
         port: process.env.DBPORT
     })
 
-    client.connect()
+    client.connect().catch(err => console.log(err))
 
     client.query('SELECT image FROM complaints')
     .then(result => {
@@ -46,13 +46,13 @@ app.post('/post', (req, res) => {
     console.log('reached')
     const client = new Client({
         database: process.env.DATABASE,
-        host: process.env.HOST,
+        host: 'localhost',
         user: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
         port: process.env.DBPORT
     })
 
-    client.connect()
+    client.connect().catch(err => console.log(err))
 
     var base64Data = req.body.image.replace(/^data:image\/png;base64,/, "");
 
