@@ -33,5 +33,11 @@ cd uiheaven
 ```
 
 ```
+Create .env folder and specify the port number your the app should be running on and specify the database 
+```
+
+```
 node app.js
 ```
+
+The app should now be running on `http://localhost/(port of your choice)`
