@@ -16,7 +16,7 @@ Install Node.js and NPM
 ```
 
 ```
-Create postgresql database
+Create postgresql database to store photos taken
 ```
 
 ```
