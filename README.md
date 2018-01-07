@@ -4,9 +4,9 @@
 
 One-page mobile website project using Node.js, Postgresql and Pug/Jade. The website is meant for people who receive unwanted advertisement leaflets in their mailbox and want to report this to the municipality (Gemeente Amsterdam). The app uses WebRTC in order to gain access to the users' camera.
 
-#### Demo (adjust browser window for mobile view):
+#### Demo:
 
-Link to deployed project: <a href="https://melding-amsterdam.yannickvisbeek.com">Melding.Amsterdam</a>
+Link to deployed project (adjust browser window for mobile view): <a href="https://melding-amsterdam.yannickvisbeek.com">Melding.Amsterdam</a>
 
 ## Site
 
