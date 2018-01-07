@@ -1,6 +1,6 @@
 # Melding.Amsterdam
 
-One-page mobile website project using Node.js, Postgresql and Pug/Jade. The website is meant for people who receive unwanted advertisement leaflets in their mailbox.
+One-page mobile website project using Node.js, Postgresql and Pug/Jade. The website is meant for people who receive unwanted advertisement leaflets in their mailbox and want to report this to the municipality (Gemeente Amsterdam).
 
 ![alt text](https://github.com/Yann1ck/uiheaven/blob/master/public/images/LandingPage_OVERVIEW_02012018.png "Melding.Amsterdam Website")
 
