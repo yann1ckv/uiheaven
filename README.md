@@ -33,7 +33,7 @@ cd uiheaven
 ```
 
 ```
-Create .env folder and specify the port number your the app should be running on and specify the database 
+Create .env file and specify the port number your the app should be running on and specify the database 
 ```
 
 ```
