@@ -6,7 +6,7 @@ One-page mobile website project using Node.js, Postgresql and Pug/Jade. The webs
 
 #### Demo:
 
-Link to deployed project (adjust browser window for mobile view): <a href="https://melding-amsterdam.yannickvisbeek.com">Melding.Amsterdam</a>
+Link to deployed project (resize browser window for mobile view): <a href="https://melding-amsterdam.yannickvisbeek.com">Melding.Amsterdam</a>
 
 ## Site
 
