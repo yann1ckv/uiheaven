@@ -4,10 +4,6 @@
 
 One-page mobile website project using Node.js, Postgresql and Pug/Jade. The website is meant for people who receive unwanted advertisement leaflets in their mailbox and want to report this to the municipality (Gemeente Amsterdam). The app uses WebRTC in order to gain access to the users' camera.
 
-#### Demo:
-
-Link to deployed project (resize browser window for mobile view): <a href="https://melding-amsterdam.yannickvisbeek.com">Melding.Amsterdam</a>
-
 ## Site
 
 Once a user gets to the landing page he/she gets asked for permission to turn on the camera (on mobile). The button/arrow at the bottom will take the user down the page to the camera view. Taking a photo will take the user down to a view where the photo that was taken is displayed and a form to fill out. If the user is not happy with the photo, he/she can retake the photo by clicking the "Opnieuw" button, which will take him/her back up the page to the camera view.
